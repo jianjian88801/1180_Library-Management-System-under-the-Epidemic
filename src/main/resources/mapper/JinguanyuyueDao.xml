@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JinguanyuyueDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.JinguanyuyueEntity" id="jinguanyuyueMap">
+        <result property="tushuguanmingcheng" column="tushuguanmingcheng"/>
+        <result property="jinguanriqi" column="jinguanriqi"/>
+        <result property="renshu" column="renshu"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="tupian" column="tupian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.JinguanyuyueVO" >
+		SELECT * FROM jinguanyuyue  jinguanyuyue         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.JinguanyuyueVO" >
+		SELECT  jinguanyuyue.* FROM jinguanyuyue  jinguanyuyue 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.JinguanyuyueView" >
+
+		SELECT  jinguanyuyue.* FROM jinguanyuyue  jinguanyuyue 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.JinguanyuyueView" >
+		SELECT * FROM jinguanyuyue  jinguanyuyue <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
